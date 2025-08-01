@@ -1,0 +1,80 @@
+/*
+ * Additional styles for the modified Organization Excellence Society landing page.
+ *
+ * TailwindCSS and other base styles should still be imported elsewhere in the
+ * project (for example via a global CSS file).  This file defines only the
+ * custom button styles requested by the user.  Buttons are now rectangular
+ * with modestly rounded corners, inspired by the provided design sample.  A
+ * primary variant uses a gradient fill, while a secondary variant uses a
+ * colored border with a transparent background that inverts on hover.
+ */
+
+:root {
+  /* Duplicate custom colour variables to ensure the gradient uses the same palette as the rest of the site */
+  --oes-primary: #1bc0be;
+  --oes-secondary: #68eae0;
+}
+
+.btn-primary {
+  background: linear-gradient(90deg, var(--oes-secondary) 0%, var(--oes-primary) 100%);
+  color: #fff;
+  padding: 0.75rem 2rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-secondary {
+  border: 2px solid var(--oes-primary);
+  color: var(--oes-primary);
+  padding: 0.75rem 2rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  background: transparent;
+}
+.btn-secondary:hover {
+  background: var(--oes-primary);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+.btn-secondary:active {
+  transform: translateY(0);
+}
+
+/* Override the hero section background to a solid dark blue rather than a gradient. */
+.hero-gradient {
+  background: #212856 !important;
+}
+
+/* Ensure the navbar occupies its own space and does not have rounded corners or extra margins. */
+.navbar-solid {
+  margin: 0 !important;
+  border-radius: 0 !important;
+}
+
+/* Remove border radius from all buttons to achieve a sharp, squared look. */
+button {
+  border-radius: 0 !important;
+}
+
+/* Remove border radius from feature cards and other interactive blocks. */
+.interactive-card {
+  border-radius: 0 !important;
+}
